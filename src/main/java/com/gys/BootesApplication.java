@@ -11,19 +11,10 @@ import org.springframework.web.bind.annotation.RestController;
 
 @SpringBootApplication
 @RestController
-@NacosPropertySource(dataId = "bamboo.test", autoRefreshed = true)
 public class BootesApplication {
     public static void main(String[] args) {
         SpringApplication.run(BootesApplication.class,args);
     }
 
-    @NacosValue(value = "${service.name:1}", autoRefreshed = true)
-    private String serverName;
-
-    @GetMapping(value = "/test")
-    @ResponseBody
-    public String get() {
-        return serverName;
-    }
 
 }
