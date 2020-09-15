@@ -1,0 +1,8 @@
+server:
+  port: 8001
+  servlet:
+    context-path: /bootes
+
+nacos:
+  config:
+    server-addr: 192.168.63.128:8848
