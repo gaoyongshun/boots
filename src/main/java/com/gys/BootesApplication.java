@@ -27,6 +27,7 @@ public class BootesApplication {
     @RequestMapping("/login")
     public void login(HttpServletResponse response) throws IOException {
         ServletOutputStream out = response.getOutputStream();
+        response.setContentType("text/html;charset=GBK");
         out.println("登录");
         out.close();
     }
