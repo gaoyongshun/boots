@@ -9,6 +9,7 @@ import javax.servlet.ServletOutputStream;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.OutputStream;
+import java.io.PrintWriter;
 
 @SpringBootApplication
 @RestController
@@ -26,9 +27,9 @@ public class BootesApplication {
 
     @RequestMapping("/login")
     public void login(HttpServletResponse response) throws IOException {
-        ServletOutputStream out = response.getOutputStream();
-        response.setContentType("text/html;charset=GBK");
-        out.println("登录");
-        out.close();
+        response.setContentType("text/html;charset=UTF-8");
+        PrintWriter writer = response.getWriter();
+        writer.println("登录");
+        writer.close();
     }
 }
